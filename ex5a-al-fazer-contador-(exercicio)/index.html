@@ -1,1 +1,58 @@
- <!-- 1ª Digitação (Resolva aqui o exercício) -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 5a - Contador de Cliques</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    p {
+      margin-top: 20px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      font-weight: bold;
+      background-color: lightgreen; /* começa como par (0) */
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="btnContador">Clique aqui</button>
+
+  <p id="textoContador">Clique: 0</p>
+
+  <script>
+    const botao = document.getElementById("btnContador");
+    const paragrafo = document.getElementById("textoContador");
+
+    let contador = 0;
+
+    botao.addEventListener("click", () => {
+      contador++;
+
+      // Atualiza o texto
+      paragrafo.textContent = "Cliques: " + contador;
+
+      // Verifica se é par ou ímpar
+      if (contador % 2 === 0) {
+        paragrafo.style.backgroundColor = "blue";
+      } else {
+        paragrafo.style.backgroundColor = "red";
+      }
+    });
+  </script>
+
+</body>
+</html>
